@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --main-bg: #4E6BFF;
+    --bg: #FFFBF1;
+    --accent: #F5D746;
+}
+
+body {
+    font-family: DM sans;
+    font-size: 1.25em;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+}
+.card {
+    background-color: var(--main-bg);
+    min-height: 450px;
+    min-width: 400px;
+    padding: 25px 60px;
+    border-radius: 25px;
+}
+
+
+.title {
+    color: var(--accent);
+}
+
+input {
+    display: inline-block;
+    background-color: var(--bg);
+    border-radius: 10px;
+    border: none;
+    padding: 8px 12px;
+    min-width: 200px;
+}
+input:focus {
+    outline: none;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.todo-list {
+    margin-top: 50px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.item-name {
+    display: inline-block;
+    background-color: var(--bg);
+    padding: 4px 12px;
+    text-align: center;
+    border-radius: 10px;
+    min-width: 200px;
+}
+
+button {
+    background-color: var(--bg);
+    border: none;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-family: DM sans;
+    font-size: 0.7em;
+}
+
+button:hover {
+    background-color: #e0ded8;
+}
