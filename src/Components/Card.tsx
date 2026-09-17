@@ -1,6 +1,15 @@
+import { useState } from 'react'
 import './components.css'
+import { Item } from './Item'
 
 export function Card() {
+
+    const [inputValue, setInputValue] = useState("")
+    function handleEvent(e) {
+        return setInputValue(e.target.value);
+    }
+
+
     return  ( 
 
         <div className="card-container">
@@ -8,19 +17,14 @@ export function Card() {
             <div className="card">
                 <div className="item-add">
                     <form>
-                        <input type="text" placeholder='Add new todo item ...'/>
+                        <input value={inputValue} onChange={handleEvent} placeholder='Add new todo item ...'/>
                         <button>Submit</button>
                     </form>
                     <div className="todo-list">
                         <p className="title">to-do list</p>
                         <ul>
-                            <li>
-                                <span className="item-name">test</span>
-                                <div className="item-buttons">
-                                    <button className="button-done">Done</button>
-                                    <button className="button-remove">Remove</button>
-                                </div>
-                            </li>
+                            <Item />
+                            <Item />
                         </ul>
                     </div>
                 </div>
