@@ -65,6 +65,17 @@ li {
     margin-top: 15px;
 }
 
+#emptyList {
+    color:rgb(240, 239, 239);
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 1em;
+}
+
+span {
+    margin-right: 10px;
+}
+
 .item-buttons {
     display: flex;
     gap: 10px;
