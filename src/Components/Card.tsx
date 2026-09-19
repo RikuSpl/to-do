@@ -4,6 +4,7 @@ import './components.css'
 type TodoItem = {
     id: string
     title: string
+    completed: boolean
 }
 
 export function Card() {
@@ -18,9 +19,23 @@ export function Card() {
 
     function handleSubmitEvent(e: React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault()
-        setTodoItem(currentTodo => [...currentTodo, { id: crypto.randomUUID(), title: inputValue },]) 
+        setTodoItem(currentTodo => [...currentTodo, { id: crypto.randomUUID(), title: inputValue, completed: false },]) 
         
     }
+
+    function handleDoneEvent(id: string) {
+
+        setTodoItem(currentTodo => {
+            return currentTodo.map(item => {
+                if(item.id === id) {
+                    return {...item, completed: true}
+                }
+            return item
+        })
+        })
+    
+    }
+
 
     return  ( 
 
@@ -40,9 +55,11 @@ export function Card() {
                             ) : (
                                 todoItem.map(item => (
                                 <li key={item.id}>
-                                    <span className="item-name">{item.title}</span>
+                                    {/* checks if item.completed is true and gives a css className accordingly*/}
+                                    {item.completed === true ? <span className="item-name completed">{item.title}</span> : <span className="item-name">{item.title}</span>}
+
                                     <div className="item-buttons">
-                                        <button className="button-done">Done</button>
+                                        <button className="button-done" onClick={() => handleDoneEvent(item.id)}>Done</button>
                                         <button className="button-remove">Remove</button>
                                     </div>
                                 </li>

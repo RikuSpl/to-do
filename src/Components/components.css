@@ -103,3 +103,7 @@ button {
 button:hover {
     background-color: #e0ded8;
 }
+
+.completed {
+    background-color: lightgreen;
+}
