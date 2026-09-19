@@ -65,11 +65,11 @@ li {
     margin-top: 15px;
 }
 
-#emptyList {
-    color:rgb(240, 239, 239);
+.empty-list {
+    color:rgb(224, 224, 224);
     justify-content: center;
     margin-top: 50px;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 span {
