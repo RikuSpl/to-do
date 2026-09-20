@@ -45,6 +45,12 @@ export function Card() {
         })
     
     }
+    
+    function handleRemoveEvent(id: string) {
+        
+        setTodoItem(todoItem.filter(item => item.id !== id))
+
+    }
 
 
     return  ( 
@@ -70,7 +76,7 @@ export function Card() {
 
                                         <div className="item-buttons">
                                             <button className="button-done" onClick={() => handleDoneEvent(item.id)}>Done</button>
-                                            <button className="button-remove">Remove</button>
+                                            <button className="button-remove" onClick={() => handleRemoveEvent(item.id)}>Remove</button>
                                         </div>
                                     </li>
                                 ))
