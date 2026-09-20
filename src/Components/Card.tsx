@@ -26,6 +26,8 @@ export function Card() {
 
         setTodoItem(currentTodo => [...currentTodo, { id: crypto.randomUUID(), title: inputValue, completed: false },]) 
         
+        setInputValue("")
+
     }
 
     function handleDoneEvent(id: string) {
@@ -60,7 +62,7 @@ export function Card() {
             <div className="card">
                 <div className="item-add">
                     <form onSubmit = {handleSubmitEvent}>
-                        <input id="todoInput"value={inputValue} onChange={handleEvent} placeholder='Add new todo item ...' maxLength={25} />
+                        <input id="todoInput" value={inputValue} onChange={handleEvent} placeholder='Add new todo item ...' maxLength={25} />
                         <button>Submit</button>
                     </form>
                     <div className="todo-list">
