@@ -98,10 +98,18 @@ button {
     border-radius: 10px;
     font-family: DM sans;
     font-size: 0.7em;
+    font-weight: 500;
 }
 
 button:hover {
     background-color: #e0ded8;
+}
+
+.button-remove:hover {
+    background-color: rgb(223, 87, 69);
+}
+.button-done:hover {
+    background-color: rgb(125, 209, 125);
 }
 
 .completed {

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './components.css'
 import { InputField } from './InputField'
 import { ListItem } from './ListItem'
@@ -11,7 +11,17 @@ type TodoItem = {
 
 export function Card() {
 
-    const [todoItem, setTodoItem] = useState<TodoItem[]>([])
+    const [todoItem, setTodoItem] = useState<TodoItem[]>(() => {
+        const localValue = localStorage.getItem("ITEMS")
+        if(localValue == null) {
+            return []
+        }
+        return JSON.parse(localValue)
+    })
+
+    useEffect(() => {
+        localStorage.setItem("ITEMS", JSON.stringify(todoItem))
+    },[todoItem] )
     
 
 
